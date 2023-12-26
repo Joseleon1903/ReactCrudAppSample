@@ -1,0 +1,75 @@
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-item {
+    margin: 0 10px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: white;
+  }
+  
+  /* Estilos para el menú de hamburguesa en dispositivos móviles */
+  .nav-toggle {
+    display: none;
+  }
+  
+  .nav-toggle-label {
+    cursor: pointer;
+    user-select: none;
+    padding: 10px 20px;
+    display: block;
+    position: relative;
+  }
+  
+  .nav-toggle-label span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin-bottom: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-nav {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+    }
+  
+    .nav-toggle:checked + .navbar-nav {
+      display: flex;
+    }
+  
+    .nav-item {
+      margin: 10px 0;
+    }
+  }
