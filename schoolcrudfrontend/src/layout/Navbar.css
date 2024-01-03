@@ -28,8 +28,19 @@
   }
   
   .nav-link {
+
     text-decoration: none;
     color: white;
+    background-color: #33cc33;
+    padding: 10px 20px;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; /* Establecer el radio del borde para hacerlo redondeado */
+
   }
   
   /* Estilos para el menú de hamburguesa en dispositivos móviles */

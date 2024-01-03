@@ -1,5 +1,6 @@
 import React from "react";
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
@@ -9,16 +10,7 @@ export default function Navbar() {
       <input type="checkbox" id="nav-toggle" className="nav-toggle" />
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link" to="/">View School</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" to="/servicios">Add School</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" to="/productos">Modify School</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" to="/contacto">Delete School</a>
+          <Link className="nav-link" to="/AddSchool">Create School</Link>
         </li>
       </ul>
     </div>

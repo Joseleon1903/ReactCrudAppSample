@@ -1,0 +1,60 @@
+#form-layout {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+  }
+
+  label, input {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  input[type="submit"] {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  /* Estilos para los botones */
+.btn-group {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .btn {
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-delete {
+    background-color: #ff3333;
+    color: white;
+  }
+  
+  .btn-edit {
+    background-color: #6699ff;
+    color: white;
+  }
+  
+  .btn-view {
+    background-color: #33cc33;
+    color: white;
+  }
