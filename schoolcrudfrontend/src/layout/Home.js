@@ -19,6 +19,11 @@ export default function Home() {
       setSchools(result.data);
     }
 
+    const deleteSchool = async (id) => {
+      await axios.delete(`http://localhost:8080/api/school?id=${id}`);
+      loadSchools();
+    };
+
   return (
     <div>
         <h1>Home</h1>
@@ -44,7 +49,7 @@ export default function Home() {
                     <td>{school.address}</td>
                     <td>{school.foundationDate}</td>
                     <td class="btn-group">
-                      <button class="btn btn-delete">Delete</button>
+                      <button class="btn btn-delete" onClick={() => deleteSchool(school.id)}>Delete</button>
                       <button class="btn btn-edit">Edit</button>
                       <button class="btn btn-view">Show</button>
                     </td>
