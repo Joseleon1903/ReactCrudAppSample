@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link , useNavigate} from 'react-router-dom';
 import './Home.css';
 import axios from 'axios';
 export default function Home() {
 
     const [schools, setSchools] = useState([]);
 
+    let navigate = useNavigate();
 
     useEffect(()=>{
         console.log("Entering in use effect");
@@ -22,6 +24,11 @@ export default function Home() {
     const deleteSchool = async (id) => {
       await axios.delete(`http://localhost:8080/api/school?id=${id}`);
       loadSchools();
+    };
+
+    const navigateTo = async (root) => {
+      console.log("Navigate to edit")
+      navigate(root);
     };
 
   return (
@@ -50,8 +57,7 @@ export default function Home() {
                     <td>{school.foundationDate}</td>
                     <td class="btn-group">
                       <button class="btn btn-delete" onClick={() => deleteSchool(school.id)}>Delete</button>
-                      <button class="btn btn-edit">Edit</button>
-                      <button class="btn btn-view">Show</button>
+                      <button class="btn btn-edit" onClick={() => navigateTo('/ModifySchool/'+school.id)}>Edit</button>
                     </td>
                   </tr>
 
