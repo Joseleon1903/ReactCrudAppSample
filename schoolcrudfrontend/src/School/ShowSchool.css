@@ -20,7 +20,7 @@ table {
     background-color: #f9f9f9;
   }
   
-  /* Estilos para los botones */
+  /* Button Style */
   .btn-group {
     display: flex;
     justify-content: space-around;

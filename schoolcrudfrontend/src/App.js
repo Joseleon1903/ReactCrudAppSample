@@ -2,9 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './layout/Navbar.js';
 import Home from './layout/Home.js';
-import AddSchool from './School/AddSchool.js';
-import ModifySchool from './School/ModifySchool.js';
-import ShowSchool from './School/ShowSchool.js';
+import AddSchool from './school/AddSchool.js';
+import ModifySchool from './school/ModifySchool.js';
+import ShowSchool from './school/ShowSchool.js';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 

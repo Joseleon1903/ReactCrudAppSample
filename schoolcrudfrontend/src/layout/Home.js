@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link , useNavigate} from 'react-router-dom';
 import './Home.css';
-import schoolImageSrc from '../images/school/school-card-img-1.jpg'; // Importa la ruta de la imagen
+import schoolImageSrc from '../images/school/school-card-img-1.jpg';
 
 import axios from 'axios';
 export default function Home() {

@@ -17,9 +17,14 @@ export default function ModifySchool() {
 
 
     const loadSchools= async()=>{
-      const result = await axios.get("http://localhost:8080/api/school");
-      console.log(result);
-      setSchools(result.data);
+      const result = await axios.get("http://localhost:8080/api/school").then(function(response){
+        console.log(response);
+        setSchools(response.data);
+      }) 
+      .catch(function (error) {
+        console.log(error.toJSON());
+      });
+      
     }
 
     const deleteSchool = async (id) => {
@@ -37,9 +42,7 @@ export default function ModifySchool() {
 
         <div className="section-bg tm-gallery-header ">
             <h2 className="tm-mb-1"><Link to="/">Home</Link></h2>
-           
              <Link className="btn-group btn btn-view add-school" to="/AddSchool">Create School</Link>
-               
         </div>
         <table>
           <thead>
@@ -62,13 +65,12 @@ export default function ModifySchool() {
                     <td>{school.language}</td>
                     <td>{school.address}</td>
                     <td>{school.foundationDate}</td>
-                    <td class="btn-group">
-                      <button class="btn btn-delete" onClick={() => deleteSchool(school.id)}>Delete</button>
-                      <button class="btn btn-edit" onClick={() => navigateTo('/ModifySchool/'+school.id)}>Edit</button>
+                    <td className="btn-group">
+                      <button className="btn btn-delete" onClick={() => deleteSchool(school.id)}>Delete</button>
+                      <button className="btn btn-edit" onClick={() => navigateTo('/ModifySchool/'+school.id)}>Edit</button>
                     </td>
                   </tr>
               ))
-
             }
           </tbody>
         </table>

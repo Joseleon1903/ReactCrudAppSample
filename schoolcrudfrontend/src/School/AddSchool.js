@@ -52,7 +52,7 @@ export default function AddSchool() {
                 Language
               </label>
               <select value={language} name='language' onChange={(e) => onInputChange(e)} required>
-                <option value="">Shoose one</option>
+                <option value="">Choose one</option>
                 <option value="English">English</option>
                 <option value="Spanish">Spanish</option>
                 <option value="Mandarin">Mandarin</option>
@@ -81,7 +81,7 @@ export default function AddSchool() {
             <button type="submit" className="btn btn-view">
               Submit
             </button>
-            <Link className="btn btn-delete" to="/">
+            <Link className="btn btn-delete" to="/ShowSchool">
               Cancel
             </Link>
           </form>

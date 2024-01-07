@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* style generals */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -48,7 +48,7 @@ footer {
   padding: 10px;
 }
 
-/* Estilos para las tarjetas */
+/* Card Style */
 .cards {
   display: flex;
   gap: 20px;

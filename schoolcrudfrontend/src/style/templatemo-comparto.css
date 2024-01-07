@@ -1,22 +1,3 @@
-/*
-
-Comparto TemplateMo
-
-https://templatemo.com/tm-544-comparto
-
-
-Color Codes
-------------
-Purple: #9999CC
-Pink: #CC9999
-Grey: #666666
-Sky Blue: #99CCFF
-Green: #99CC99
-Light Grey: #F2F2F2
-Text Color: #666
-
-*/
-
 *,
 *::before,
 *::after {
@@ -497,13 +478,6 @@ figure.effect-bubba:hover p {
   padding-right: 10px;
 }
 
-.gmap-canvas {
-  overflow:hidden;
-  background:none!important;
-  min-height:400px;
-  width:100%;
-}
-
 .contact-form-outer { width: 37%; }
 .contact-info-outer { width: 28%; }
 
@@ -551,8 +525,8 @@ figure.effect-bubba:hover p {
   display: block;
 }
 
-a { color: #666; }
-a:hover { color: #CC9999; }
+a { color: #fff; }
+a:hover { color: #063970; }
 button:hover { cursor: pointer; }
 
 .tm-social-link {

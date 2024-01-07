@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 
 @RestController
 @RequestMapping(value="/api/school")
+@CrossOrigin("http://localhost:3000/")
 public class SchoolController {
 
     Logger logger = Logger.getLogger(SchoolController.class.getName());
@@ -29,9 +30,10 @@ public class SchoolController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public ResponseEntity<School> findById(@PathVariable("id") Long id){
+    public ResponseEntity<School> findById(@PathVariable("id") String id){
         try {
-            School entity = schoolService.findById(id);
+            Long schoolId = Long.parseLong(id);
+            School entity = schoolService.findById(schoolId);
             return new ResponseEntity(entity, HttpStatus.OK);
         } catch (NoExistEntityException e) {
             logger.info("ERROR: "+e.getMessage());
@@ -51,12 +53,31 @@ public class SchoolController {
         }
     }
 
+    @PutMapping
+    @ResponseBody
+    public ResponseEntity<School> updateSchool(@RequestBody School school) {
+        try {
+            School entity = schoolService.update(school);
+            return new ResponseEntity(entity, HttpStatus.OK);
+        } catch (NoExistEntityException e) {
+            logger.info("ERROR: "+e.getMessage());
+            throw new InternalServerError(e.getMessage());
+        }
+    }
+
     @GetMapping
     @ResponseBody
     public ResponseEntity<List<School>> findSchool(@RequestParam(value = "id" , required = false) Long id ,
                                                    @RequestParam(value = "name" , required = false) String name ) {
             List<School> entityList = schoolService.findByParam(id, name);
             return new ResponseEntity(entityList, HttpStatus.OK);
+    }
+
+    @DeleteMapping
+    @ResponseBody
+    public ResponseEntity<Void> deleteSchool(@RequestParam(value = "id") Long id) {
+        schoolService.deleteById(id);
+        return ResponseEntity.accepted().build();
     }
 
 
