@@ -25,7 +25,7 @@ export default function AddSchool() {
     e.preventDefault();
     await axios.post("http://localhost:8080/api/school", school);
     console.log("send post request....");
-    navigate("/");
+    navigate("/ShowSchool");
     
   };
 

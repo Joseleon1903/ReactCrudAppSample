@@ -1,71 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import { Link , useNavigate} from 'react-router-dom';
 import './Home.css';
+import schoolImageSrc from '../images/school/school-card-img-1.jpg'; // Importa la ruta de la imagen
+
 import axios from 'axios';
 export default function Home() {
 
-    const [schools, setSchools] = useState([]);
-
-    let navigate = useNavigate();
-
-    useEffect(()=>{
-        console.log("Entering in use effect");
-        loadSchools();
-
-    }, []);
-
-
-    const loadSchools= async()=>{
-      const result = await axios.get("http://localhost:8080/api/school");
-      console.log(result);
-      setSchools(result.data);
-    }
-
-    const deleteSchool = async (id) => {
-      await axios.delete(`http://localhost:8080/api/school?id=${id}`);
-      loadSchools();
-    };
-
-    const navigateTo = async (root) => {
-      console.log("Navigate to edit")
-      navigate(root);
-    };
-
+   
   return (
-    <div>
-        <h1>Home</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Name</th>
-              <th>Language</th>
-              <th>Address</th>
-              <th>Foundation Date</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              schools.map((school) =>(
+    <div class="main-page" >
 
-                  <tr>
-                    <td key={school.id}> {school.id}</td>
-                    <td>{school.name}</td>
-                    <td>{school.language}</td>
-                    <td>{school.address}</td>
-                    <td>{school.foundationDate}</td>
-                    <td class="btn-group">
-                      <button class="btn btn-delete" onClick={() => deleteSchool(school.id)}>Delete</button>
-                      <button class="btn btn-edit" onClick={() => navigateTo('/ModifySchool/'+school.id)}>Edit</button>
-                    </td>
-                  </tr>
+      <header>
+          <h1>Dashboard</h1>
+          <nav>
+            <ul>
+              <li><a href="#">Inicio</a></li>
+              <li><a href="#">Estadísticas</a></li>
+              <li><a href="#">Configuración</a></li>
+            </ul>
+          </nav>
+        </header>
+        
+        <main>
+          <aside>
+            <h2>Menú</h2>
+            <ul>
+              <li><a href="#">Opción 1</a></li>
+              <li><a href="#">Opción 2</a></li>
+              <li><a href="#">Opción 3</a></li>
+              <li><a href="#">Opción 4</a></li>
+            </ul>
+          </aside>
+          
+          <section class="content">
+            <div class="cards">
+              <div class="card">
+                <h3>School</h3>
+                <img className='card-image' src={schoolImageSrc} alt="Error Loading Image" />
+                <br></br>
+                <Link className="btn btn-view" to="/ShowSchool">
+                  Go to School Crud
+                </Link>
+              </div>
 
-              ))
-
-            }
-          </tbody>
-        </table>
+            </div>
+          </section>
+        </main>
+        
+        <footer>
+          <p>Footer - Información de contacto</p>
+        </footer>
+       
     </div>
   );
 }

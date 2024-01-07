@@ -38,7 +38,7 @@ export default function ModifySchool() {
     e.preventDefault();
     await axios.put("http://localhost:8080/api/school", school);
     console.log("send put request....");
-    navigate("/");
+    navigate("/ShowSchool");
     
   };
 

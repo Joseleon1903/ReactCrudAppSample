@@ -1,26 +1,73 @@
-table {
-  border-collapse: collapse;
-  border: 1px solid #ddd;
-  margin: 1em;
-  position: relative;
-  width: 90%;
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+header {
+  background-color: #1e81b0;
+  color: white;
+  padding: 20px;
 }
 
-th {
-  background-color: #f2f2f2;
+nav ul {
+  list-style: none;
+  padding: 0;
 }
 
-tr:nth-child(even) {
-  background-color: #f9f9f9;
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
 }
 
-/* Estilos para los botones */
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+}
+
+aside {
+  width: 200px;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+footer {
+  background-color: #1e81b0;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Estilos para las tarjetas */
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  background-color: #76b5c5;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.card-image{
+  height: 350px;
+  width: 400px;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
 .btn-group {
   display: flex;
   justify-content: space-around;
