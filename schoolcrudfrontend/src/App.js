@@ -5,6 +5,8 @@ import Home from './layout/Home.js';
 import AddSchool from './school/AddSchool.js';
 import ModifySchool from './school/ModifySchool.js';
 import ShowSchool from './school/ShowSchool.js';
+import GptHome from './gpt3/GptHome.js';
+
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -22,6 +24,8 @@ function App() {
         <Route exact path="/ShowSchool" element={<ShowSchool/>} ></Route>
         <Route exact path="/AddSchool" element={<AddSchool/>}></Route>
         <Route exact path="/ModifySchool/:schoolId" element={<ModifySchool/>} ></Route>
+        <Route exact path="/Gpt3" element={<GptHome/>} ></Route>
+
       </Routes>
 
 
