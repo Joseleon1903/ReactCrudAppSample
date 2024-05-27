@@ -3,8 +3,7 @@ package com.ap.crud.samnple.ReactCrudApp.service;
 import com.ap.crud.samnple.ReactCrudApp.domain.Category;
 import com.ap.crud.samnple.ReactCrudApp.exception.EntityAlreadyExist;
 import com.ap.crud.samnple.ReactCrudApp.exception.NoExistEntityException;
-import com.ap.crud.samnple.ReactCrudApp.reporitory.CategoryRepository;
-import com.ap.crud.samnple.ReactCrudApp.reporitory.SchoolRepository;
+import com.ap.crud.samnple.ReactCrudApp.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

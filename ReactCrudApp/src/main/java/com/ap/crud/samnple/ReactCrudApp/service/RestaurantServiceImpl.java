@@ -1,7 +1,7 @@
 package com.ap.crud.samnple.ReactCrudApp.service;
 
 import com.ap.crud.samnple.ReactCrudApp.domain.Restaurant;
-import com.ap.crud.samnple.ReactCrudApp.reporitory.RestaurantRepository;
+import com.ap.crud.samnple.ReactCrudApp.repository.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +29,18 @@ public class RestaurantServiceImpl implements RestaurantService {
                 listOut::add
         );
         return listOut;
+    }
+
+    @Override
+    public List<Restaurant> saveAll(Restaurant[] restaurants) {
+        logger.entering(RestaurantServiceImpl.class.getName(),"saveAll" );
+        logger.info("entering in saveAll");
+        logger.info("restaurants count: "+restaurants.length);
+
+        for (Restaurant entity : restaurants){
+            logger.info("save: "+entity);
+            restaurantRepository.save(entity);
+        }
+        return List.of(restaurants);
     }
 }

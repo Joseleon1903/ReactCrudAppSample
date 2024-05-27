@@ -7,4 +7,6 @@ import java.util.List;
 public interface RestaurantService {
 
     List<Restaurant> getAll();
+
+    List<Restaurant> saveAll(Restaurant[] restaurants);
 }

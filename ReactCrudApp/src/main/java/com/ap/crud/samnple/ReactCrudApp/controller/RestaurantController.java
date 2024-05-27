@@ -1,9 +1,7 @@
 package com.ap.crud.samnple.ReactCrudApp.controller;
 
-import com.ap.crud.samnple.ReactCrudApp.domain.Category;
 import com.ap.crud.samnple.ReactCrudApp.domain.Restaurant;
 import com.ap.crud.samnple.ReactCrudApp.service.RestaurantService;
-import com.ap.crud.samnple.ReactCrudApp.service.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +28,13 @@ public class RestaurantController {
     @ResponseBody
     public ResponseEntity<List<Restaurant>> findAll(){
         List<Restaurant> entityList = restaurantService.getAll();
+        return new ResponseEntity<>(entityList, HttpStatus.OK);
+    }
+
+    @PostMapping
+    @ResponseBody
+    public ResponseEntity<List<Restaurant>> saveRestaurants( @RequestBody Restaurant[] restaurants){
+        List<Restaurant> entityList = restaurantService.saveAll(restaurants);
         return new ResponseEntity<>(entityList, HttpStatus.OK);
     }
 

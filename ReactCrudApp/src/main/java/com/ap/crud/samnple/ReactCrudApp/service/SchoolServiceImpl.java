@@ -3,7 +3,7 @@ package com.ap.crud.samnple.ReactCrudApp.service;
 import com.ap.crud.samnple.ReactCrudApp.domain.School;
 import com.ap.crud.samnple.ReactCrudApp.exception.EntityAlreadyExist;
 import com.ap.crud.samnple.ReactCrudApp.exception.NoExistEntityException;
-import com.ap.crud.samnple.ReactCrudApp.reporitory.SchoolRepository;
+import com.ap.crud.samnple.ReactCrudApp.repository.SchoolRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

@@ -1,7 +1,6 @@
 package com.ap.crud.samnple.ReactCrudApp.service;
 
-import com.ap.crud.samnple.ReactCrudApp.reporitory.ProfileRepository;
-import com.ap.crud.samnple.ReactCrudApp.reporitory.SchoolRepository;
+import com.ap.crud.samnple.ReactCrudApp.repository.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

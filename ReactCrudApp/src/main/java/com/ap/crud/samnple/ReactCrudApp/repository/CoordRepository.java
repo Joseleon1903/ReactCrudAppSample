@@ -1,4 +1,4 @@
-package com.ap.crud.samnple.ReactCrudApp.reporitory;
+package com.ap.crud.samnple.ReactCrudApp.repository;
 
 import com.ap.crud.samnple.ReactCrudApp.domain.Coord;
 import org.springframework.data.repository.CrudRepository;
