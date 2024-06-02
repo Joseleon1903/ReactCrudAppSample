@@ -1,15 +1,13 @@
 package com.ap.crud.samnple.ReactCrudApp.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -20,24 +18,27 @@ public class Food {
     @Id
     private String id;
     private String title;
-    @OneToMany
-    private List<Tags> foodTags;
-    @OneToMany
-    private List<FoodType> foodType;
+    @OneToMany(fetch = FetchType.EAGER)
+    private Set<Tags> foodTags = new HashSet<>();
+    @OneToMany(fetch = FetchType.EAGER)
+    private Set<FoodType> foodType= new HashSet<>();;
     private String code;
     private boolean isAvailable;
-    @OneToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Restaurant restaurant;
     private Integer rating;
     private String ratingCount;
     private String description;
     private BigDecimal price;
 
-    @OneToMany
-    private List<Additives> additives;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<Additives> additives = new HashSet<>();
     private String imageUrl;
     private Integer version;
-    private String category;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Category category;
+
     private String time;
 
 

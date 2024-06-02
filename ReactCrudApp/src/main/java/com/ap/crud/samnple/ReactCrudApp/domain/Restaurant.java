@@ -17,6 +17,7 @@ public class Restaurant {
     private String id;
     private String title;
     private String time;
+    private Integer distance;
     private String imageUrl;
     private String owner;
     private String code;

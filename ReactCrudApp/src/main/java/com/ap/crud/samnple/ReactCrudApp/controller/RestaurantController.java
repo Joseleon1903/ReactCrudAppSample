@@ -31,6 +31,13 @@ public class RestaurantController {
         return new ResponseEntity<>(entityList, HttpStatus.OK);
     }
 
+    @GetMapping("/nearByRestaurant")
+    @ResponseBody
+    public ResponseEntity<List<Restaurant>> findNearByRestaurant(){
+        List<Restaurant> entityList = restaurantService.findNearByRestaurant();
+        return new ResponseEntity<>(entityList, HttpStatus.OK);
+    }
+
     @PostMapping
     @ResponseBody
     public ResponseEntity<List<Restaurant>> saveRestaurants( @RequestBody Restaurant[] restaurants){

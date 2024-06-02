@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 @Service
 public class RestaurantServiceImpl implements RestaurantService {
@@ -42,5 +43,13 @@ public class RestaurantServiceImpl implements RestaurantService {
             restaurantRepository.save(entity);
         }
         return List.of(restaurants);
+    }
+
+    @Override
+    public List<Restaurant> findNearByRestaurant() {
+        logger.info("entering in findNearByRestaurant");
+        List<Restaurant> listOut = new ArrayList<>();
+        listOut = restaurantRepository.findNearRestaurant();
+        return listOut;
     }
 }

@@ -9,4 +9,6 @@ public interface RestaurantService {
     List<Restaurant> getAll();
 
     List<Restaurant> saveAll(Restaurant[] restaurants);
+
+    List<Restaurant> findNearByRestaurant();
 }
