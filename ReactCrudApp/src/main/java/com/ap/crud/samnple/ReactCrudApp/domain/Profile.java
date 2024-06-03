@@ -1,14 +1,13 @@
 package com.ap.crud.samnple.ReactCrudApp.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -20,10 +19,11 @@ public class Profile {
      private String id;
      private String username;
      private String email;
+     private String password;
      private String uid;
 
-     @OneToMany
-     private List<Address> address;
+     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+     private Address address;
      private String userType;
      private String profileUrl;
      private LocalDate updatedAt;

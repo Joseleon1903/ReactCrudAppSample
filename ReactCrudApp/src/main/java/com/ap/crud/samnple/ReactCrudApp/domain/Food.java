@@ -21,7 +21,7 @@ public class Food {
     @OneToMany(fetch = FetchType.EAGER)
     private Set<Tags> foodTags = new HashSet<>();
     @OneToMany(fetch = FetchType.EAGER)
-    private Set<FoodType> foodType= new HashSet<>();;
+    private Set<FoodType> foodType= new HashSet<>();
     private String code;
     private boolean isAvailable;
     @ManyToOne(fetch = FetchType.EAGER)
