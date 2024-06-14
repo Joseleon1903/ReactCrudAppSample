@@ -1,8 +1,6 @@
 package com.ap.crud.samnple.ReactCrudApp.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,7 +22,7 @@ public class Restaurant {
     private String logoUrl;
     private Integer rating;
     private Integer ratingCount;
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Coord coords;
 
 

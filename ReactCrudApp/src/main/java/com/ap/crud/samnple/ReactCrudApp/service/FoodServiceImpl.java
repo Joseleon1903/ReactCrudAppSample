@@ -152,7 +152,6 @@ public class FoodServiceImpl implements  FoodService{
                     addEntity = additivesRepository.findById(additive.getId()).get();
                     foodEntity.getAdditives().add(addEntity);
                 }else{
-                    addEntity.setId(null);
                     addEntity.setTitle(additive.getTitle());
                     addEntity.setPrice(additive.getPrice());
                     foodEntity.getAdditives().add(addEntity);

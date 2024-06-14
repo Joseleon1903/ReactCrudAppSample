@@ -31,7 +31,7 @@ public class Food {
     private String description;
     private BigDecimal price;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     private Set<Additives> additives = new HashSet<>();
     private String imageUrl;
     private Integer version;
